@@ -1,0 +1,12 @@
+[
+    {
+        "id": 1,
+        "employeeId": 2,
+        "reviewText": "Jane Smith - Improvement needed"
+    },
+    {
+        "id": 2,
+        "employeeId": 1,
+        "reviewText": "John Doe - Excellent performance"
+    }
+]
