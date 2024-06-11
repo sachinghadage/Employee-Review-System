@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Employee Panel</title>
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="employee.css">
 </head>
 <body>
     <header>
@@ -16,6 +16,14 @@
         <div id="reviewList">
             <!-- Review list will be populated here dynamically -->
         </div>
+        <h3>Submit Feedback</h3>
+        <form id="feedbackForm" onsubmit="handleFeedbackForm(event)">
+            <label for="reviewId">Review ID:</label>
+            <input type="number" id="reviewId" required>
+            <label for="feedbackText">Feedback:</label>
+            <textarea id="feedbackText" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
     </main>
     <script src="employee.js"></script>
 </body>

@@ -3,24 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Panel</title>
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="admin.css">
+
+    <title>Admin View</title>
+    <style>
+        /* Add your styling here or link to a CSS framework */
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Welcome Admin</h1>
-        <button onclick="logout()">Logout</button>
-    </header>
-    <main>
-        <h2>Employee Management</h2>
-        <div id="employeeList">
-            <!-- Employee list will be populated here dynamically -->
-        </div>
-        <h2>Performance Reviews</h2>
-        <div id="reviewList">
-            <!-- Review list will be populated here dynamically -->
-        </div>
-    </main>
+    <h1>Admin View</h1>
+    <button onclick="logout()">Logout</button>
+    
+    <h2>Employees</h2>
+    <div id="employeeList"></div>
+    <h3>Add/Update Employee</h3>
+    <form id="employeeForm" onsubmit="handleEmployeeForm(event)">
+        <input type="hidden" id="employeeId">
+        <label for="employeeName">Name:</label>
+        <input type="text" id="employeeName" required>
+        <button type="submit">Submit</button>
+    </form>
+    
+    <h2>Performance Reviews</h2>
+    <div id="reviewList"></div>
+    <h3>Add/Update Review</h3>
+    <form id="reviewForm" onsubmit="handleReviewForm(event)">
+        <input type="hidden" id="reviewId">
+        <label for="reviewEmployeeId">Employee ID:</label>
+        <input type="number" id="reviewEmployeeId" required>
+        <label for="reviewText">Review:</label>
+        <input type="text" id="reviewText" required>
+        <button type="submit">Submit</button>
+    </form>
+    
+    <h2>Assign Reviews</h2>
+    <form id="assignForm" onsubmit="handleAssignForm(event)">
+        <label for="assignEmployeeId">Employee ID:</label>
+        <input type="number" id="assignEmployeeId" required>
+        <label for="assignReviewerIds">Reviewer IDs (comma-separated):</label>
+        <input type="text" id="assignReviewerIds" required>
+        <button type="submit">Assign</button>
+    </form>
+
     <script src="admin.js"></script>
 </body>
 </html>
